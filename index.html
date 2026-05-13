@@ -191,6 +191,7 @@ td:first-child{font-weight:500;color:var(--navy)}
   <div class="fg"><label>SBU</label><div class="ms-wrap" id="ms-sbu"></div></div>
   <div class="fg"><label>Shop Floor</label><div class="ms-wrap" id="ms-shopfloor"></div></div>
   <div class="fg"><label>Mill Name</label><div class="ms-wrap" id="ms-mill"></div></div>
+  <div class="fg"><label>Product</label><div class="ms-wrap" id="ms-product"></div></div>
   <div class="fg"><label>Shift</label><div class="ms-wrap" id="ms-shift"></div></div>
   <div class="fg"><label>From Date</label><input type="date" id="f-from"></div>
   <div class="fg"><label>To Date</label><input type="date" id="f-to"></div>
@@ -237,6 +238,9 @@ td:first-child{font-weight:500;color:var(--navy)}
           <th data-col="Total Good Production (MT)" onclick="sortBy('Total Good Production (MT)')">Good Production</th>
           <th data-col="Achievement %" onclick="sortBy('Achievement %')">Achiv%</th>
           <th data-col="Wastage%" onclick="sortBy('Wastage%')">Wastage%</th>
+          <th data-col="Performance%" onclick="sortBy('Performance%')">Performance%</th>
+          <th data-col="Availability%" onclick="sortBy('Availability%')">Availability%</th>
+          <th data-col="Quality%" onclick="sortBy('Quality%')">Quality%</th>
           <th data-col="OEE%" onclick="sortBy('OEE%')">OEE%</th>
         </tr></thead>
         <tbody id="tbody"></tbody>
@@ -552,6 +556,9 @@ function renderTable() {
         <td><strong>${r['Total Good Production (MT)']||'–'}</strong></td>
         <td class="pct ${pc(r['Achievement %'])}">${r['Achievement %']||'–'}</td>
         <td class="pct ${pc(r['Wastage%'],true)}">${r['Wastage%']||'–'}</td>
+        <td class="pct ${pc(r['Performance%'])}">${r['Performance%']||'–'}</td>
+        <td class="pct ${pc(r['Availability%'])}">${r['Availability%']||'–'}</td>
+        <td class="pct ${pc(r['Quality%'])}">${r['Quality%']||'–'}</td>
         <td class="pct ${pc(r['OEE%'])}">${r['OEE%']||'–'}</td>
       </tr>`).join('')
     :'<tr><td colspan="13" style="padding:50px;color:var(--muted);text-align:center">No data matches the selected filters.</td></tr>';
