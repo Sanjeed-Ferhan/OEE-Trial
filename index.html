@@ -552,9 +552,6 @@ function renderTable() {
         <td><strong>${r['Total Good Production (MT)']||'–'}</strong></td>
         <td class="pct ${pc(r['Achievement %'])}">${r['Achievement %']||'–'}</td>
         <td class="pct ${pc(r['Wastage%'],true)}">${r['Wastage%']||'–'}</td>
-        <td class="pct ${pc(r['Performance%'])}">${r['Performance%']||'–'}</td>
-        <td class="pct ${pc(r['Availability%'])}">${r['Availability%']||'–'}</td>
-        <td class="pct ${pc(r['Quality%'])}">${r['Quality%']||'–'}</td>
         <td class="pct ${pc(r['OEE%'])}">${r['OEE%']||'–'}</td>
       </tr>`).join('')
     :'<tr><td colspan="13" style="padding:50px;color:var(--muted);text-align:center">No data matches the selected filters.</td></tr>';
